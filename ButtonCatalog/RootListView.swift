@@ -47,6 +47,33 @@ struct RootListView: View {
                 } label: {
                     Text("Subtitle and TextAlignment")
                 }
+
+                NavigationLink {
+                    AnyUIViewControllerRepresentable(
+                        make: { _ in MultilineViewController() },
+                        update: { _, _ in }
+                    )
+                } label: {
+                    Text("Multiline Title")
+                }
+
+                NavigationLink {
+                    AnyUIViewControllerRepresentable(
+                        make: { _ in SimpleCustomBackgroundViewController() },
+                        update: { _, _ in }
+                    )
+                } label: {
+                    Text("Background Customization")
+                }
+
+                NavigationLink {
+                    AnyUIViewControllerRepresentable(
+                        make: { _ in UpdateButtonTextViewController() },
+                        update: { _, _ in }
+                    )
+                } label: {
+                    Text("UpdateButtonTextViewController")
+                }
             }
         }
         .navigationTitle("Button Catalog")

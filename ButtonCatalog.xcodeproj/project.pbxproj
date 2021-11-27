@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E35995372751062900E9372B /* MultilineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35995362751062900E9372B /* MultilineViewController.swift */; };
+		E35995392751091700E9372B /* SimpleCustomBackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35995382751091700E9372B /* SimpleCustomBackgroundViewController.swift */; };
+		E359953B27510D9E00E9372B /* UpdateButtonTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359953A27510D9E00E9372B /* UpdateButtonTextViewController.swift */; };
 		E3F8BEA3274F7344002C7120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8BEA2274F7344002C7120 /* AppDelegate.swift */; };
 		E3F8BEA5274F7344002C7120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8BEA4274F7344002C7120 /* SceneDelegate.swift */; };
 		E3F8BEA7274F7344002C7120 /* ConfigurationTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8BEA6274F7344002C7120 /* ConfigurationTypesViewController.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E35995362751062900E9372B /* MultilineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineViewController.swift; sourceTree = "<group>"; };
+		E35995382751091700E9372B /* SimpleCustomBackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCustomBackgroundViewController.swift; sourceTree = "<group>"; };
+		E359953A27510D9E00E9372B /* UpdateButtonTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateButtonTextViewController.swift; sourceTree = "<group>"; };
 		E3F8BE9F274F7344002C7120 /* ButtonCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButtonCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F8BEA2274F7344002C7120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3F8BEA4274F7344002C7120 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +80,9 @@
 				E3F8BEBB274F8B31002C7120 /* ButtonSizesViewController.swift */,
 				E3F8BEBD274FD1B7002C7120 /* ImagePositionsViewController.swift */,
 				E3F8BEBF274FD52D002C7120 /* TitleAlignmentsViewController.swift */,
+				E35995362751062900E9372B /* MultilineViewController.swift */,
+				E35995382751091700E9372B /* SimpleCustomBackgroundViewController.swift */,
+				E359953A27510D9E00E9372B /* UpdateButtonTextViewController.swift */,
 				E3F8BEAB274F7344002C7120 /* Assets.xcassets */,
 				E3F8BEAD274F7344002C7120 /* LaunchScreen.storyboard */,
 				E3F8BEB0274F7344002C7120 /* Info.plist */,
@@ -156,7 +165,10 @@
 				E3F8BEB8274F8122002C7120 /* RootListView.swift in Sources */,
 				E3F8BEBE274FD1B7002C7120 /* ImagePositionsViewController.swift in Sources */,
 				E3F8BEBC274F8B31002C7120 /* ButtonSizesViewController.swift in Sources */,
+				E359953B27510D9E00E9372B /* UpdateButtonTextViewController.swift in Sources */,
 				E3F8BEA3274F7344002C7120 /* AppDelegate.swift in Sources */,
+				E35995372751062900E9372B /* MultilineViewController.swift in Sources */,
+				E35995392751091700E9372B /* SimpleCustomBackgroundViewController.swift in Sources */,
 				E3F8BEA5274F7344002C7120 /* SceneDelegate.swift in Sources */,
 				E3F8BEC0274FD52D002C7120 /* TitleAlignmentsViewController.swift in Sources */,
 			);

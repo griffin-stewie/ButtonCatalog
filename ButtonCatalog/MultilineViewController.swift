@@ -1,64 +1,28 @@
 //
-//  ConfigurationTypesViewController.swift
+//  MultilineViewController.swift
 //  ButtonCatalog
 //
-//  Created by griffin-stewie on 2021/11/25.
+//  Created by griffin-stewie on 2021/11/26.
 //  
 //
 
 import UIKit
 
-class ConfigurationTypesViewController: UIViewController {
+/***
+ titile に与える文字列に改行文字が含まれていると改行されて表示される。改行文字が含まれていない場合でもボタンの幅指定がある場合には自動で折り返される。逆に幅指定が無い場合には改行なしの長文はそのまま横に伸びて画面から見切れる。
+ subtitle を使っていないので textAlignment の値は、テキストのレイアウトに影響を与えない。
+**/
+
+class MultilineViewController: UIViewController {
 
     lazy var stackView: UIStackView = {
         let v = UIStackView(arrangedSubviews: [
-            button(configurationProvider: {
-                    .plain()
-            }, actionHandler: { [unowned self] _ in
-                self.infoLabel.text = "plain"
-            }),
-
-            button(configurationProvider: {
-                    .gray()
-            }, actionHandler: { [unowned self] _ in
-                self.infoLabel.text = "gray"
-            }),
-
-            button(configurationProvider: {
-                return .tinted()
-            }, actionHandler: { [unowned self] _ in
-                self.infoLabel.text = "tinted"
-            }),
-
-            button(configurationProvider: {
-                return .filled()
-            }, actionHandler: { [unowned self] _ in
-                self.infoLabel.text = "filled"
-            }),
-
-            button(configurationProvider: {
-                return .borderless()
-            }, actionHandler: { [unowned self] _ in
-                self.infoLabel.text = "borderless"
-            }),
-
-            button(configurationProvider: {
-                return .bordered()
-            }, actionHandler: { [unowned self] _ in
-                self.infoLabel.text = "bordered"
-            }),
-
-            button(configurationProvider: {
-                return .borderedTinted()
-            }, actionHandler: { [unowned self] _ in
-                self.infoLabel.text = "borderedTinted"
-            }),
-
-            button(configurationProvider: {
-                return .borderedProminent()
-            }, actionHandler: { [unowned self] _ in
-                self.infoLabel.text = "borderedProminent"
-            }),
+            button(text: "leading", titleAlignment: .leading),
+            button(text: "center", titleAlignment: .center),
+            button(text: "trailing", titleAlignment: .trailing),
+            button(text: "title\nwith newline", titleAlignment: .automatic),
+            button(text: "automatic but image placed top", imagePlacement: .top, titleAlignment: .automatic),
+            button(text: "It's just long text. I will repeat it over and over again.", imagePlacement: .trailing, titleAlignment: .automatic),
         ])
         v.axis = .vertical
         v.alignment = .center
@@ -72,7 +36,7 @@ class ConfigurationTypesViewController: UIViewController {
         let v = UILabel()
         v.numberOfLines = 0
         v.textAlignment = .center
-        v.text = "デフォルトで用意されている8つの Configuration による見た目の違い"
+        v.text = "タイトル文字に長い文字や改行ありの文字列を与えた場合はどうなるか？"
         v.font = UIFont.preferredFont(forTextStyle: .headline)
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
@@ -107,37 +71,36 @@ class ConfigurationTypesViewController: UIViewController {
 
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.widthAnchor.constraint(equalToConstant: 200),
 
             infoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             infoLabel.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor),
             infoLabel.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor),
             infoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+    }
 
-        /// 8つ定義があるけど、4つの命名違いっぽいことを検証
-
-        func inspect(lhs: UIButton.Configuration, rhs: UIButton.Configuration) {
-            print("\(lhs == rhs)")
-            dump(lhs)
-            dump(rhs)
-        }
-
-        inspect(lhs: .plain(), rhs: .borderless())
-        inspect(lhs: .gray(), rhs: .bordered())
-        inspect(lhs: .tinted(), rhs: .borderedTinted())
-        inspect(lhs: .filled(), rhs: .borderedProminent())
-
-        inspect(lhs: .bordered(), rhs: .borderless())
-        inspect(lhs: .tinted(), rhs: .bordered())
+    private func button(text: String, configuration: UIButton.Configuration = .filled(), size: UIButton.Configuration.Size = .medium, imagePlacement: NSDirectionalRectEdge = .leading, titleAlignment: UIButton.Configuration.TitleAlignment = .automatic) -> UIButton {
+        button(configurationProvider: {
+            var config: UIButton.Configuration = configuration
+            config.buttonSize = size
+            config.titleAlignment = titleAlignment
+            config.title = text
+            config.image = UIImage(systemName: "paperplane.fill")
+            config.imagePlacement = imagePlacement
+            config.imagePadding = 7
+            return config
+        }, actionHandler: { [unowned self] _ in
+            self.infoLabel.text = text
+        })
     }
 
     private func button(configurationProvider: () -> UIButton.Configuration, actionHandler: @escaping UIActionHandler) -> UIButton {
         let signInButton = UIButton(configuration: configurationProvider(), primaryAction: .init(handler: actionHandler))
         signInButton.translatesAutoresizingMaskIntoConstraints = false
-        signInButton.setTitle("Sign In", for: [])
         signInButton.configuration = configurationProvider()
 
         return signInButton
     }
-}
 
+}
