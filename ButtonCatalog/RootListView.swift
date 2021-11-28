@@ -72,7 +72,34 @@ struct RootListView: View {
                         update: { _, _ in }
                     )
                 } label: {
-                    Text("UpdateButtonTextViewController")
+                    Text("Update Button Title")
+                }
+
+                NavigationLink {
+                    AnyUIViewControllerRepresentable(
+                        make: { _ in ActivityIndicatorInsideButtonViewController() },
+                        update: { _, _ in }
+                    )
+                } label: {
+                    Text("Show ActivityIndicator inside button")
+                }
+
+                NavigationLink {
+                    AnyUIViewControllerRepresentable(
+                        make: { _ in ToggleViewController() },
+                        update: { _, _ in }
+                    )
+                } label: {
+                    Text("Toggle button")
+                }
+
+                NavigationLink {
+                    AnyUIViewControllerRepresentable(
+                        make: { _ in PopupButtonViewController() },
+                        update: { _, _ in }
+                    )
+                } label: {
+                    Text("Pop-up button")
                 }
             }
         }

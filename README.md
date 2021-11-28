@@ -14,11 +14,12 @@ iOS 15 から利用できる UIButton.Configuration やトグルボタン、ポ�
 - [x] Subtitle
 - [x] 複数行
 - [x] 背景カスタム
-- 手動で update
-- ActivityIndicator
-- Toggle Button
+- [x] 手動で update
+- [x] ActivityIndicator
+- [x] Toggle Button
+- [x] Pop-up
 - Pull-down
-- Pop-up
+
 
 ## Links
 
