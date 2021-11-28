@@ -1,14 +1,14 @@
 //
-//  PopupButtonViewController.swift
+//  DeferredPulldownButtonViewController.swift
 //  ButtonCatalog
 //
-//  Created by griffin-stewie on 2021/11/27.
+//  Created by griffin-stewie on 2021/11/28.
 //  
 //
 
 import UIKit
 
-class PopupButtonViewController: UIViewController {
+class DeferredPulldownButtonViewController: UIViewController {
 
     enum Cellular: String, CustomStringConvertible {
         case softbank
@@ -44,7 +44,7 @@ class PopupButtonViewController: UIViewController {
         let v = UILabel()
         v.numberOfLines = 0
         v.textAlignment = .center
-        v.text = "Pop-up ボタン。現在選択している値をチェックマークで表示できるのが特徴。それ以外は Pull-down と違いはないと思う。"
+        v.text = "Pull-down button。Pop-up と違って現在の値を表すチェックマークが表示されない。"
         v.font = UIFont.preferredFont(forTextStyle: .headline)
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
@@ -68,7 +68,7 @@ class PopupButtonViewController: UIViewController {
     lazy var simSelectorButton = button()
 
     deinit {
-        print("\(#file) \(#function)")
+        print("\(#file) \(#function), \(self)")
     }
 
     override func loadView() {
@@ -129,14 +129,33 @@ class PopupButtonViewController: UIViewController {
         }
 
         button.menu = UIMenu(title: "使用する回線を選択してください。",children: [
-            Cellular.softbank.action(handler: closure),
-            Cellular.docomo.action(handler: closure),
+            UIDeferredMenuElement { [weak self] completion in
+                guard let self = self else {
+                    return
+                }
+
+                self.fakeNetworking {
+
+                    print(self)
+
+                    completion([
+                        Cellular.softbank.action(handler: closure),
+                        Cellular.docomo.action(handler: closure),
+                    ])
+                }
+            }
         ])
 
         button.showsMenuAsPrimaryAction = true
-        button.changesSelectionAsPrimaryAction = true
+        
         button.configuration = config
 
         return button
+    }
+
+    private func fakeNetworking(completion: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            completion()
+        }
     }
 }

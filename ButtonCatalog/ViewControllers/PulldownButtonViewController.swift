@@ -1,14 +1,14 @@
 //
-//  PopupButtonViewController.swift
+//  PulldownViewController.swift
 //  ButtonCatalog
 //
-//  Created by griffin-stewie on 2021/11/27.
+//  Created by griffin-stewie on 2021/11/28.
 //  
 //
 
 import UIKit
 
-class PopupButtonViewController: UIViewController {
+class PulldownButtonViewController: UIViewController {
 
     enum Cellular: String, CustomStringConvertible {
         case softbank
@@ -44,7 +44,7 @@ class PopupButtonViewController: UIViewController {
         let v = UILabel()
         v.numberOfLines = 0
         v.textAlignment = .center
-        v.text = "Pop-up ボタン。現在選択している値をチェックマークで表示できるのが特徴。それ以外は Pull-down と違いはないと思う。"
+        v.text = "Pull-down button。Pop-up と違って現在の値を表すチェックマークが表示されない。"
         v.font = UIFont.preferredFont(forTextStyle: .headline)
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
@@ -134,9 +134,10 @@ class PopupButtonViewController: UIViewController {
         ])
 
         button.showsMenuAsPrimaryAction = true
-        button.changesSelectionAsPrimaryAction = true
+        
         button.configuration = config
 
         return button
     }
+
 }
