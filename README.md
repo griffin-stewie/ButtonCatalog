@@ -18,7 +18,7 @@ iOS 15 から利用できる UIButton.Configuration やトグルボタン、ポ�
 - [x] ActivityIndicator
 - [x] Toggle Button
 - [x] Pop-up
-- Pull-down
+- [x] Pull-down
 
 
 ## Links
