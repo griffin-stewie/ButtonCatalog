@@ -116,15 +116,18 @@ class ActivityIndicatorInsideButtonViewController: UIViewController {
         config.image = UIImage(systemName: "heart")
         config.baseForegroundColor = .systemPink
 
-        let button = UIButton(configuration: config, primaryAction: .init(handler: { [unowned self] _ in
-            Task {
-                let status = self.isLoading.next()
-                self.isLoading = status
-                if status == .loading {
-                    await fakeNetworking()
+        let button = UIButton(configuration: config, primaryAction: .init(handler: { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+
+            let status = self.isLoading.next()
+            if status == .loading {
+                self.fakeNetworking {
                     self.isLoading =  self.isLoading.next()
                 }
             }
+            self.isLoading = status
         }))
 
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -150,11 +153,9 @@ class ActivityIndicatorInsideButtonViewController: UIViewController {
         return button
     }
 
-    private func fakeNetworking() async {
-        await withUnsafeContinuation { continuation in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                continuation.resume()
-            }
+    private func fakeNetworking(completion: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            completion()
         }
     }
 }
