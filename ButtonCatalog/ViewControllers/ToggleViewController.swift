@@ -58,7 +58,7 @@ class ToggleViewController: UIViewController {
     }
 
     deinit {
-        print("\(#file) \(#function)")
+        print("\(#file) \(#function), \(self)")
     }
 
     override func loadView() {

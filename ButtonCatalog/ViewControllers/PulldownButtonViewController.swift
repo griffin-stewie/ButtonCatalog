@@ -68,7 +68,7 @@ class PulldownButtonViewController: UIViewController {
     lazy var simSelectorButton = button()
 
     deinit {
-        print("\(#file) \(#function)")
+        print("\(#file) \(#function), \(self)")
     }
 
     override func loadView() {

@@ -61,6 +61,10 @@ class MultilineViewController: UIViewController {
         self.view = view
     }
 
+    deinit {
+        print("\(#file) \(#function), \(self)")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         NSLayoutConstraint.activate([

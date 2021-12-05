@@ -135,9 +135,6 @@ class DeferredPulldownButtonViewController: UIViewController {
                 }
 
                 self.fakeNetworking {
-
-                    print(self)
-
                     completion([
                         Cellular.softbank.action(handler: closure),
                         Cellular.docomo.action(handler: closure),
@@ -154,7 +151,7 @@ class DeferredPulldownButtonViewController: UIViewController {
     }
 
     private func fakeNetworking(completion: @escaping () -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
             completion()
         }
     }

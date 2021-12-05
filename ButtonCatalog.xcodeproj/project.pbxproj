@@ -13,6 +13,7 @@
 		E359953D2751B5A800E9372B /* ActivityIndicatorInsideButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359953C2751B5A800E9372B /* ActivityIndicatorInsideButtonViewController.swift */; };
 		E359953F27526E0700E9372B /* ToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359953E27526E0700E9372B /* ToggleViewController.swift */; };
 		E3599543275278EB00E9372B /* PopupButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3599542275278EB00E9372B /* PopupButtonViewController.swift */; };
+		E393FB90275AE47100C3FFE6 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E393FB8F275AE47100C3FFE6 /* RootTableViewController.swift */; };
 		E3F09A3527531A2100AA56F3 /* PulldownButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F09A3427531A2100AA56F3 /* PulldownButtonViewController.swift */; };
 		E3F09A372753201B00AA56F3 /* DeferredPulldownButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F09A362753201B00AA56F3 /* DeferredPulldownButtonViewController.swift */; };
 		E3F8BEA3274F7344002C7120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8BEA2274F7344002C7120 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		E359953C2751B5A800E9372B /* ActivityIndicatorInsideButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorInsideButtonViewController.swift; sourceTree = "<group>"; };
 		E359953E27526E0700E9372B /* ToggleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleViewController.swift; sourceTree = "<group>"; };
 		E3599542275278EB00E9372B /* PopupButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupButtonViewController.swift; sourceTree = "<group>"; };
+		E393FB8F275AE47100C3FFE6 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootTableViewController.swift; path = ViewControllers/RootTableViewController.swift; sourceTree = "<group>"; };
 		E3F09A3427531A2100AA56F3 /* PulldownButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulldownButtonViewController.swift; sourceTree = "<group>"; };
 		E3F09A362753201B00AA56F3 /* DeferredPulldownButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeferredPulldownButtonViewController.swift; sourceTree = "<group>"; };
 		E3F09A3827534AC700AA56F3 /* ButtonCatalog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ButtonCatalog.entitlements; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				E3F8BEA4274F7344002C7120 /* SceneDelegate.swift */,
 				E3F8BEB9274F81B9002C7120 /* AnyUIViewControllerRepresentable.swift */,
 				E3F8BEB7274F8122002C7120 /* RootListView.swift */,
+				E393FB8F275AE47100C3FFE6 /* RootTableViewController.swift */,
 				E359954027526E3100E9372B /* ViewControllers */,
 				E3F8BEAB274F7344002C7120 /* Assets.xcassets */,
 				E3F8BEAD274F7344002C7120 /* LaunchScreen.storyboard */,
@@ -195,6 +198,7 @@
 				E359953F27526E0700E9372B /* ToggleViewController.swift in Sources */,
 				E3F8BEA3274F7344002C7120 /* AppDelegate.swift in Sources */,
 				E35995372751062900E9372B /* MultilineViewController.swift in Sources */,
+				E393FB90275AE47100C3FFE6 /* RootTableViewController.swift in Sources */,
 				E3F09A3527531A2100AA56F3 /* PulldownButtonViewController.swift in Sources */,
 				E3F09A372753201B00AA56F3 /* DeferredPulldownButtonViewController.swift in Sources */,
 				E35995392751091700E9372B /* SimpleCustomBackgroundViewController.swift in Sources */,

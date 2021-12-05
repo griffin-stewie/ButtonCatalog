@@ -45,6 +45,10 @@ class TitleAlignmentsViewController: UIViewController {
         return v
     }()
 
+    deinit {
+        print("\(#file) \(#function), \(self)")
+    }
+    
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .white

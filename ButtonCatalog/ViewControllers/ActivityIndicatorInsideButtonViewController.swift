@@ -78,7 +78,7 @@ class ActivityIndicatorInsideButtonViewController: UIViewController {
     lazy var favoriteButton = button()
 
     deinit {
-        print("\(#file) \(#function)")
+        print("\(#file) \(#function), \(self)")
     }
 
     override func loadView() {
@@ -123,7 +123,11 @@ class ActivityIndicatorInsideButtonViewController: UIViewController {
 
             let status = self.isLoading.next()
             if status == .loading {
-                self.fakeNetworking {
+                self.fakeNetworking { [weak self] in
+                    guard let self = self else {
+                        return
+                    }
+
                     self.isLoading =  self.isLoading.next()
                 }
             }
@@ -154,7 +158,7 @@ class ActivityIndicatorInsideButtonViewController: UIViewController {
     }
 
     private func fakeNetworking(completion: @escaping () -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
             completion()
         }
     }

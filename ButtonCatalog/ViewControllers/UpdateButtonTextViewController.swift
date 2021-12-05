@@ -49,6 +49,10 @@ class UpdateButtonTextViewController: UIViewController {
 
     lazy var cartButton = button()
 
+    deinit {
+        print("\(#file) \(#function), \(self)")
+    }
+    
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .white
