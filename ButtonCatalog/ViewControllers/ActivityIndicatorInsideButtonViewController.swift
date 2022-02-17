@@ -54,7 +54,7 @@ class ActivityIndicatorInsideButtonViewController: UIViewController {
         let v = UILabel()
         v.numberOfLines = 0
         v.textAlignment = .center
-        v.text = "Show ActivityIndicator inside button"
+        v.text = "タップ後に Activitry Indicator を表示してからステートを変更する。"
         v.font = UIFont.preferredFont(forTextStyle: .headline)
         v.translatesAutoresizingMaskIntoConstraints = false
         return v

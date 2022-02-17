@@ -31,7 +31,7 @@ class TitleAlignmentsViewController: UIViewController {
         let v = UILabel()
         v.numberOfLines = 0
         v.textAlignment = .center
-        v.text = "デフォルトで用意されている4つのタイトルの配置設定と画像の表示位置による見た目の違い"
+        v.text = "テキストのアラインメント調整による違い。"
         v.font = UIFont.preferredFont(forTextStyle: .headline)
         v.translatesAutoresizingMaskIntoConstraints = false
         return v

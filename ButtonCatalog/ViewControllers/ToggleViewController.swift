@@ -27,7 +27,7 @@ class ToggleViewController: UIViewController {
         let v = UILabel()
         v.numberOfLines = 0
         v.textAlignment = .center
-        v.text = "Show ActivityIndicator inside button"
+        v.text = "Toggle Button"
         v.font = UIFont.preferredFont(forTextStyle: .headline)
         v.translatesAutoresizingMaskIntoConstraints = false
         return v

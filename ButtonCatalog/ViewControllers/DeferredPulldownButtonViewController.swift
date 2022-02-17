@@ -44,7 +44,7 @@ class DeferredPulldownButtonViewController: UIViewController {
         let v = UILabel()
         v.numberOfLines = 0
         v.textAlignment = .center
-        v.text = "Pull-down button。Pop-up と違って現在の値を表すチェックマークが表示されない。"
+        v.text = "DeferredMenuElement を使ってメニュー項目を遅延取得。"
         v.font = UIFont.preferredFont(forTextStyle: .headline)
         v.translatesAutoresizingMaskIntoConstraints = false
         return v

@@ -27,7 +27,7 @@ class UpdateButtonTextViewController: UIViewController {
         let v = UILabel()
         v.numberOfLines = 0
         v.textAlignment = .center
-        v.text = "setNeedsUpdateConfiguration"
+        v.text = "setNeedsUpdateConfiguration でボタンを更新"
         v.font = UIFont.preferredFont(forTextStyle: .headline)
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
