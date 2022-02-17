@@ -19,7 +19,7 @@ iOS 15 から利用できる UIButton.Configuration やトグルボタン、ポ�
 - [x] Toggle Button
 - [x] Pop-up
 - [x] Pull-down
-
+- [x] UIDeferredMenuElement
 
 ## Links
 
